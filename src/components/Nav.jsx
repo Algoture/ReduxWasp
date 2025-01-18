@@ -1,12 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
+  const cart = useSelector((state) => state.cart);
   return (
     <>
       <div className="flex fixed flex-wrap place-items-center ">
         <section className="relative mx-auto">
-          <nav className="flex justify-between bg-gray-900 text-white w-screen">
+          <nav className="flex justify-between bg-accent text-white w-screen">
             <div className="px-5 xl:px-10 py-2 flex w-full items-center">
               <Link to={"/"} className="text-3xl font-bold font-heading">
                 ReduxWasp.
@@ -20,7 +22,7 @@ const Nav = () => {
                 <div className="relative py-2">
                   <div className="top-4 absolute left-3">
                     <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white">
-                      3
+                      {cart.length}
                     </p>
                   </div>
                   <svg
