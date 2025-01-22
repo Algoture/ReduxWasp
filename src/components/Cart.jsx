@@ -8,6 +8,14 @@ const Cart = () => {
     return dispatch(remove(item));
   }
   const cart = useSelector((state) => state.cart);
+  if (cart.length === 0) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <h1 className="text-3xl font-bold text-gray-900">Cart is Empty</h1>
+      </div>
+    );
+    
+  }
   return (
     <div className="pt-14">
       <div className="grid grid-cols-4 gap-2">

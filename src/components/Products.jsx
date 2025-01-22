@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { useDispatch } from "react-redux";
 import { add } from "../app/cartSlice";
-// import { products } from "../utils/data";
 
 const Products = () => {
   const dispatch = useDispatch();
